@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Application Form</title>
+    <!-- <link rel="stylesheet" href="applicant_form.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+        }
+        h2, h3, label {
+            color: #004080;
+            font-weight: bold;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #004080;
+            border-radius: 8px;
+        }
+        .submit-btn {
+            background: #004080;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .submit-btn:hover {
+            background: #003060;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+    <div class="container">
+        <h2 class="text-center">Lease Application Details</h2>
+        
+        <form id="applicationForm">
+            <div class="form-section">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="doa" class="form-label">Date of Application</label>
+                        <input type="date" id="doa" name="doa" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="company" class="form-label">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="plot" class="form-label">Required Plot Number</label>
+                        <input type="text" id="plot" name="plot" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lease" class="form-label">Time Period of Lease</label>
+                        <select id="lease" name="lease" class="form-select">
+                            <option value="">Select</option>
+                            <option value="5">5 Years</option>
+                            <option value="10">10 Years</option>
+                            <option value="15">15 Years</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pancard" class="form-label">PAN Card Number</label>
+                        <input type="text" id="pancard" name="pancard" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pld" class="form-label">PLD A/C No</label>
+                        <input type="text" id="pld" name="pld" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="purpose" class="form-label">Purpose</label>
+                        <select id="purpose" name="purpose" class="form-select">
+                            <option value="business">Business & Trade Expansion</option>
+                            <option value="industrial">Industrial Development</option>
+                            <option value="energy">Energy & Resources</option>
+                            <option value="fishing">Fishing & Aquaculture</option>
+                            <option value="ship">Ship Recycling & Scrapping</option>
+                            <option value="automobile">Automobile & Heavy Equipment Handling</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Uploaded Documents</h3>
+                <div id="fileContainer">
+                    <p>Loading files...</p>
+                </div>
+            </div>
+    
+            <!-- Hide Submit Button -->
+            <div class="text-center">
+                <button type="submit" id="btn" class="submit-btn w-100 py-2">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+    <div id="footer"></div>
+    <script type="module" src="view_application.js"></script>
+    <script src="script.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("purpose").addEventListener("change", function() {
+        let otherField = document.getElementById("otherPurposeField");
+        if (this.value === "other") {
+            otherField.classList.remove("d-none");
+        } else {
+            otherField.classList.add("d-none");
+        }
+    });
+</script>
+    
+</body>
+
+</html>

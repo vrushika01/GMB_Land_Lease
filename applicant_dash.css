@@ -1,0 +1,154 @@
+ General Reset
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background: #f7f9fc;
+     color: #333;
+     line-height: 1.6;
+     /* background: url("https://images.pexels.com/photos/8193334/pexels-photo-8193334.jpeg") no-repeat center center/cover; */
+ }
+
+ /* Hero Section with Transparent Overlay */
+ .hero {
+     position: relative;
+     width: 100vw;
+     height: 80vh; 
+     background: url("https://images.pexels.com/photos/8193334/pexels-photo-8193334.jpeg") no-repeat center center/cover;
+     background-size: cover;
+     display: flex;
+     flex-direction: column;
+     padding: 20px;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .hero::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(255, 255, 255, 0.3);
+     /* White overlay with 60% opacity */
+     z-index: 0;
+ }
+
+
+ /* Logout Button Styling */
+
+ /* Dashboard Layout */
+ .dashboard {
+    /* flex:1; */
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 20px;
+     max-width: 1200px;
+     margin: 20px auto;
+     padding: 20px;
+     position: relative;
+     z-index: 1;
+ }
+
+ /* Card Style */
+ .card {
+     background: #fff;
+     border-radius: 12px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     padding: 20px;
+     text-align: center;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+ }
+
+ .card i {
+     font-size: 3rem;
+     color: #004080;
+     margin-bottom: 10px;
+ }
+
+ .card h3 {
+     font-size: 1.5rem;
+     margin-bottom: 10px;
+     color: #333;
+ }
+
+ .card p {
+     font-size: 1rem;
+     color: #666;
+ }
+
+ .btn {
+     display: inline-block;
+     margin-top: 10px;
+     padding: 10px 20px;
+     background: #004080;
+     color: #fff;
+     border-radius: 8px;
+     text-decoration: none;
+     font-size: 1rem;
+     transition: background 0.3s ease;
+ }
+
+ .btn:hover {
+     background: #003366;
+ }
+
+ /* Header */
+ .dashboard-header {
+     grid-column: span 3;
+     background: #004080;
+     color: #fff;
+     /* padding: 10px; */
+     border-radius: 12px;
+     text-align: center;
+ }
+
+ .dashboard-header h1 {
+     font-size: 2rem;
+ }
+
+ /* Notifications */
+ .notifications {
+     text-align: left;
+ }
+
+ .notification {
+     display: flex;
+     align-items: center;
+     margin-bottom: 15px;
+ }
+
+ .notification i {
+     color: #004080;
+     font-size: 1.5rem;
+     margin-right: 10px;
+ }
+
+ .notification p {
+     margin: 0;
+ }
+
+ 
+ @media (min-width: 768px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}

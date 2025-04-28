@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="applicant_dash.css">
+</head>
+<body>
+
+    <div id="header"></div>
+    
+<section class="hero">
+    <div class="dashboard">
+        <!-- Header Section -->
+        <div class="dashboard-header">
+            <h2 id="welcome-text">Welcome, Applicant!</h2>
+            <p>Manage your applications and stay updated.</p>
+        </div>
+
+        <!-- Application Status Card -->
+        <div class="card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Application Status</h3>
+            <p>Your current application is under review.</p>
+            <a href="#" class="btn">View Details</a>
+        </div>
+
+        <!-- New Application Card -->
+        <div class="card">
+            <i class="fas fa-plus-circle"></i>
+            <h3>New Application</h3>
+            <p>Start a new application process easily.</p>
+            <a href="applicant_form.html" class="btn">Apply Now</a>
+        </div>
+
+    
+    </div>
+
+    
+</section>
+
+     <!-- <footer>
+        <p>&copy; 2025 GMB. All Rights Reserved.</p>
+    </footer> -->
+    <div id="footer"></div>
+    <script>
+         //custome message
+    document.addEventListener("DOMContentLoaded", function () {
+        const userName = sessionStorage.getItem("userName");
+        if (userName) {
+            document.getElementById("welcome-text").textContent = `Welcome, ${userName}!`;
+        }
+    });
+    </script>
+    <script type="module" src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

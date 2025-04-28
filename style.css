@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* height: 100vh; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("https://images.pexels.com/photos/8193334/pexels-photo-8193334.jpeg") no-repeat center center/cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* White Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 0;
+}
+
+/* LOGIN CONTAINER */
+.login-container {
+    position: relative;
+    z-index: 1;
+    /* Keeps the form above the overlay */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+
+
+/* INPUT FIELDS */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #666;
+}
+
+
+
+/* BUTTON */
+#btn {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* HOVER EFFECT */
+#btn:hover {
+    background-color: #1079e3;
+    cursor: pointer;
+}
+
+/* TEXT LINKS */
+.forgot {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.register {
+    text-align: center;
+    margin-top: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #004080;
+}
+/* index.html*/
+/* Login Container positioned on top of the hero image */
+.login-container_grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    justify-content: center;
+  }
+
+  
+/* Login Box */
+.login-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    position: relative;
+    min-height:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .login-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+    color: #004080;
+    font-size: 1.5rem;
+  }
+  
+  
+.button-container {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    gap:10px;
+  }
+
+  .button-container button:hover {
+    transform: translateY(-3px);
+  }
+
+  
+.button-container button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-weight: 600;
+  }
+  
+  .button-container button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .login-btn {
+    background: #004080;
+    color: #fff;
+  }
+  
+  .login-btn:hover {
+    background: #003366;
+  }
+
+  /* Responsive Adjustments */
+@media (max-width: 735px) {
+    .login-container_grid {
+        grid-template-columns: 1fr;
+    }
+  }
+  

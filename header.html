@@ -1,0 +1,98 @@
+
+  <header>
+    
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      width: 100vw;
+      background-color: #004080;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      position: relative;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 70px;
+      height: auto;
+    }
+
+    .h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    #optional-buttons {
+      display: none; /* Hidden by default */
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logout-btn {
+      background: #d9534f;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: #c9302c;
+    }
+
+    #icon {
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    #icon:hover {
+      color: #f4b400;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left {
+        flex-direction: column;
+      }
+
+      #optional-buttons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+    <div class="header-left">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ91Y7hKCUMCgFWWClq5qpHpxCJcaIDLZUnKg&s" alt="Logo" class="logo">
+      <h1 class="h1">Land Allotment Portal</h1>
+    </div>
+
+    <div id="optional-buttons" style="display: none;">
+      <i id="icon" class="fa-solid fa-bell"></i>
+      <button id="logoutBtn" class="logout-btn" >Logout</button>
+
+  </div>
+  
+  </header>
