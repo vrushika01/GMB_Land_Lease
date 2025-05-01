@@ -7,173 +7,44 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
-    <script type="module" src="firebase.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url("https://images.pexels.com/photos/8193334/pexels-photo-8193334.jpeg") no-repeat center center/cover;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* White Overlay */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: 0;
-        }
-
-        /* LOGIN CONTAINER */
-        .login-container {
-            position: relative;
-            z-index: 1;
-            /* Keeps the form above the overlay */
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        /* INPUT FIELDS */
-        .input-box {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .input-box input {
-            width: 100%;
-            padding: 10px;
-            padding-left: 40px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .input-box i {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #666;
-        }
-
-        /* BUTTON */
-        .btn {
-            background-color: #004080;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-        /* HOVER EFFECT */
-        .btn:hover {
-            background-color: #1079e3;
-            cursor: pointer;
-        }
-
-        /* TEXT LINKS */
-        .forgot {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-
-        .register {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #004080;
-        }
-
-       
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
+
     <div id="header"></div>
+    <section class="hero">
 
-    <div class="hero">
-
-        <div class="login-container mt-5 mb-4 mx-auto p-3">
-            <form action="" method="POST">
-                <h2 class="text-center  mb-3"><b>Officer Login</b></h2>
+        <div class="login-container">
+            <form id="login-form">
+                <h2 class="text-center "><b>Login</b></h2>
                 <div class="input-box">
-                    <input type="text" id="email" name="email" placeholder="Email" required>
+                    <input type="text" id="login-email" name="email" placeholder="Email" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <!-- <div class="forgot">
+                <div class="forgot">
                     <a href="forgot.html">Forgot Password?</a>
-                </div> -->
-                <button type="submit" name="login" class="btn">Login</button>
-                <!-- <div class="register">
+                </div>
+                <button type="submit" name="login" id="btn" onclick="login()">Login</button>
+                <div class="register">
                     <p> Don't have an account? <a href="registeration.html"> Register </a></p>
-                </div> -->
+                </div>
             </form>
+            <p id="message"></p>
         </div>
-    </div>
+    </section>
 
-    <div id="footer">      
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module">
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-    
-        const auth = getAuth();
-    
-        document.querySelector("form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.querySelector('input[type="password"]').value;
-    
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    //alert("Login Successful!");
-                    window.location.href = "officer_dash.html"; // Redirect to a dashboard
-                })
-                .catch((error) => {
-                    alert("Login Failed: " + error.message);
-                });
-        });
-    </script>
+    <!-- <div id="footer">
+        &copy; 2025 GMB. All Rights Reserved.
+    </div> -->
+<div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 
