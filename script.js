@@ -13,7 +13,7 @@ function showForm(userType) {
         case 'box3':
         case 'box4':
         case 'box5':
-            loginPage = "officer_login.html";  // Same login page for these officers
+            loginPage = "applicant_login.html";  // Same login page for these officers
             break;
     }
   
